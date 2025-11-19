@@ -15,18 +15,18 @@ public class RegistrationService {
         return r;
     }
 
-    public Optional<Registration> read(String attendeeName) {
+    public Optional<Registration> read(String ticketCode) {
         for (Registration r : store) {
-            if (r.getAttendeeName().equals(attendeeName)) {
+            if (r.getTicketCode().equals(ticketCode)) {
                 return Optional.of(r);
             }
         }
         return Optional.empty();
     }
 
-    public Optional<Registration> update (Registration registration, String attendeeName) {
+    public Optional<Registration> update (Registration registration, String ticketCode) {
         for (Registration r : store) {
-            if (r.getAttendeeName().equals(attendeeName)) {
+            if (r.getTicketCode().equals(ticketCode)) {
                 r.setAttendeeName(registration.getAttendeeName());
                 r.setEmail(registration.getEmail());
                 r.setTicketCode(registration.getTicketCode());
@@ -37,9 +37,9 @@ public class RegistrationService {
         return Optional.empty();
     }
 
-    public Registration delete(String attendeeName) {
+    public Registration delete(String ticketCode) {
         for (Registration r : store) {
-            if(r.getAttendeeName().equals(attendeeName)) {
+            if(r.getTicketCode().equals(ticketCode)) {
                 store.remove(r);
                 return r;
             }
