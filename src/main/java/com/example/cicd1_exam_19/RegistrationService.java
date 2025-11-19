@@ -8,7 +8,7 @@ import java.util.Optional;
 
 @Service
 public class RegistrationService {
-    private List<Registration> store =new ArrayList<>();
+    private final List<Registration> store =new ArrayList<>();
 
     public Registration create(Registration r) {
         store.add(r);
